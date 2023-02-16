@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://str_input.gd" type="Script" id=1]
+[ext_resource path="res://str_wheel.png" type="Texture" id=2]
+[ext_resource path="res://bitmapws.png" type="Texture" id=3]
+
+[node name="str_input" type="Control"]
+margin_right = 1026.0
+margin_bottom = 599.0
+script = ExtResource( 1 )
+str_x_perc = 10
+str_y_perc = 90
+
+[node name="StrWheel" type="TouchScreenButton" parent="."]
+normal = ExtResource( 3 )
+
+[node name="spite" type="Sprite" parent="StrWheel"]
+position = Vector2( 64, 63 )
+texture = ExtResource( 2 )
+
+[connection signal="pressed" from="StrWheel" to="." method="_on_StrWheel_pressed"]
+[connection signal="released" from="StrWheel" to="." method="_on_StrWheel_released"]
